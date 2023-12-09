@@ -11,3 +11,8 @@ export interface IQuiz {
   title: string
   options: IOption[]
 }
+
+export interface IQuizAnswer {
+  _questionID: string | mongoose.Types.ObjectId
+  _optionID: string | mongoose.Types.ObjectId
+}

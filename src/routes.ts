@@ -6,6 +6,6 @@ const routes = express()
 
 routes.get('/', (req, res) => (res.json('🚀 Server up and running')))
 routes.get('/quiz', registerQuiz)
-routes.post('/quiz', checkQuiz)
+routes.post('/check-quiz', checkQuiz)
 
 export default routes

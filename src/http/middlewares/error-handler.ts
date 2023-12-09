@@ -9,6 +9,12 @@ export async function errorHandler(error: Error, request: Request, response: Res
       .send({ message: 'Erro de validação', issues: error.format() })
   }
 
+  if (error.name === "CastError") {
+    return response
+      .status(400)
+      .send({ message: 'Id inválido' })
+  }
+
   if (env.NODE_ENV !== 'production') {
     console.error(error)
   } else {

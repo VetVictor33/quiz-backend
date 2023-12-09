@@ -1,7 +1,8 @@
-import { QuizRepository } from '@/repositories/quiz-repository'
-import { beforeAll, beforeEach, describe, expect, it } from 'vitest'
-import { CheckQuiz } from './check-quiz'
+import { beforeEach, describe, expect, it } from 'vitest'
 import { FakeQuizRepository } from '@/repositories/fakes/fake-quiz-repository'
+import { QuizRepository } from '@/repositories/quiz-repository'
+import { CheckQuiz } from './check-quiz'
+import { IQuizAnswer } from '@/interfaces/quiz'
 
 let quizRepository: QuizRepository
 let sut: CheckQuiz
@@ -18,7 +19,7 @@ describe("Check quiz answers", () => {
 
   it("Should validate correct answers", async () => {
     const quiz = (await quizRepository.findOneByTitle('Fake title'))!
-    const answer = {
+    const answer: IQuizAnswer = {
       _questionID: quiz._id!,
       _optionID: quiz.options[0]._id!
     }

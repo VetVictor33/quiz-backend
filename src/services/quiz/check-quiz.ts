@@ -1,11 +1,8 @@
+import { IQuizAnswer } from "@/interfaces/quiz";
 import { QuizRepository } from "@/repositories/quiz-repository";
-import mongoose from "mongoose";
 
 interface CheckQuizServiceRequest {
-  answers: {
-    _questionID: string | mongoose.Types.ObjectId
-    _optionID: string | mongoose.Types.ObjectId
-  }[]
+  answers: IQuizAnswer[]
 }
 
 interface CheckQuizResponse {
@@ -22,7 +19,7 @@ export class CheckQuiz {
       if (!quiz) {
         throw new Error('Incorrect quiz Id')
       }
-      const option = quiz.options.find((option) => option._id === answer._optionID)
+      const option = quiz.options.find((option) => option._id?.toString() === answer._optionID.toString())
       if (!option) {
         throw new Error('Incorrect option Id')
       }
