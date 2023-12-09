@@ -1,16 +1,7 @@
-import { Schema, Types, model } from "mongoose";
+import { IOption, IQuiz } from "@/interfaces/quiz";
+import { Schema, model } from "mongoose";
 
-export interface IOption {
-  _id?: Types.ObjectId
-  text: string
-  isCorrect?: boolean
-}
 
-export interface IQuiz {
-  _id?: Types.ObjectId
-  title: string
-  options: IOption[]
-}
 
 const QuizSchema: Schema<IQuiz> = new Schema<IQuiz>({
   title: { type: String, require: true, unique: true },

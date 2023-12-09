@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
-import { IOption, IQuiz } from "@/schemas/quiz";
 import { QuizRepository } from "../quiz-repository";
+import { IOption, IQuiz } from "@/interfaces/quiz";
 
 export class FakeQuizRepository implements QuizRepository {
   private quizzes: IQuiz[] = []

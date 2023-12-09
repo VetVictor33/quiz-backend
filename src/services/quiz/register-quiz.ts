@@ -1,5 +1,5 @@
 import { QuizRepository } from "@/repositories/quiz-repository";
-import { IQuiz } from "@/schemas/quiz";
+import { IQuiz } from "@/interfaces/quiz";
 
 
 interface RegisterQuizServiceRequest {

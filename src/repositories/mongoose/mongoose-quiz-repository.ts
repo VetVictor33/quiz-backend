@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
-import { IOption, IQuiz, Quiz } from "@/schemas/quiz";
+import { Quiz } from "@/schemas/quiz";
 import { QuizRepository } from "../quiz-repository";
+import { IOption, IQuiz } from "@/interfaces/quiz";
 
 export class MongooseQuizRepository implements QuizRepository {
 

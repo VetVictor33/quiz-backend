@@ -2,7 +2,7 @@ import { QuizRepository } from '@/repositories/quiz-repository'
 import { beforeEach, describe, expect, it } from 'vitest'
 import { RegisterQuiz } from './register-quiz'
 import { FakeQuizRepository } from '@/repositories/fakes/fake-quiz-repository'
-import { IOption } from '@/schemas/quiz'
+import { IOption } from '@/interfaces/quiz'
 
 let quizRepository: QuizRepository
 let sut: RegisterQuiz

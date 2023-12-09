@@ -1,4 +1,4 @@
-import { IOption, IQuiz } from "@/schemas/quiz"
+import { IOption, IQuiz } from "@/interfaces/quiz"
 import { Types } from "mongoose"
 
 
