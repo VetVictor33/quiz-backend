@@ -20,7 +20,7 @@ describe("Register Quiz service", () => {
   it("Should create a quiz", async () => {
     const myQuiz = await sut.execute({ quizzes: [{ title: titleOne, options: [myOptionOne, myOptionTwo] }] })
 
-    expect(myQuiz.length).toEqual(1)
+    expect(myQuiz?.length).toEqual(1)
   })
 
   it("Should create many quizzes", async () => {
@@ -31,15 +31,15 @@ describe("Register Quiz service", () => {
       ]
     })
 
-    expect(myQuiz.length).toEqual(2)
+    expect(myQuiz?.length).toEqual(2)
   })
 
   it("Should should not return 'isCorrect' IOption property", async () => {
-    const myQuiz = await sut.execute({
+    const myQuiz = (await sut.execute({
       quizzes: [
         { title: titleOne, options: [myOptionOne, myOptionTwo] },
       ]
-    })
+    }))!
 
     expect(myQuiz[0]).not.toHaveProperty('isCorrect')
   })
