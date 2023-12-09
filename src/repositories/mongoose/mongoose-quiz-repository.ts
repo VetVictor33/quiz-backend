@@ -3,6 +3,12 @@ import { IOption, IQuiz, Quiz } from "@/schemas/quiz";
 import { QuizRepository } from "../quiz-repository";
 
 export class MongooseQuizRepository implements QuizRepository {
+
+  async findById(id: string): Promise<IQuiz | null> {
+    const quiz = await Quiz.findById(id)
+    return quiz
+  }
+
   async createOne(title: string, options: IOption[]): Promise<void> {
 
     options.forEach((options) => {

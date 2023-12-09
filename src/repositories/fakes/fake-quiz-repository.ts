@@ -4,6 +4,14 @@ import { QuizRepository } from "../quiz-repository";
 export class FakeQuizRepository implements QuizRepository {
   private quizzes: IQuiz[] = []
 
+  async findById(id: string): Promise<IQuiz | null> {
+    const quiz = this.quizzes.find(quiz => quiz._id === id)
+    if (!quiz) {
+      return null
+    }
+    return quiz
+  }
+
   async createOne(title: string, options: IOption[]): Promise<void> {
     this.quizzes.push({
       title, options
