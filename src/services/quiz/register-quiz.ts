@@ -18,7 +18,7 @@ export class RegisterQuiz {
       await this.quizRepository.createOne(quiz.title, quiz.options)
       const createdQuiz = await this.quizRepository.findOneByTitle(quiz.title)
       if (!createdQuiz) {
-        throw new Error('Failed to create quiz')
+        return
       }
       for (const option of createdQuiz.options) {
         delete option.isCorrect
