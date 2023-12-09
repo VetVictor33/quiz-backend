@@ -23,6 +23,10 @@ export async function registerQuiz(request: Request, response: Response) {
             text: 'Argentina',
             isCorrect: false,
           },
+          {
+            text: 'Venezuela',
+            isCorrect: false,
+          },
         ],
       },
       {
