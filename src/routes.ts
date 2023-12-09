@@ -1,7 +1,11 @@
 import express from 'express'
+import { registerQuiz } from './http/controllers/quiz/register-quiz'
+import { checkQuiz } from './http/controllers/quiz/check-quiz'
 
 const routes = express()
 
-routes.use('/', (req, res) => (res.json('🚀 Server up and running')))
+routes.get('/', (req, res) => (res.json('🚀 Server up and running')))
+routes.get('/quiz', registerQuiz)
+routes.post('/quiz', checkQuiz)
 
 export default routes
