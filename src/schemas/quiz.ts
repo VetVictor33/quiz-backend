@@ -7,6 +7,7 @@ export interface IOption {
 }
 
 export interface IQuiz {
+  _id?: string
   title: string
   options: IOption[]
 }
