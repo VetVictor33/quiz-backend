@@ -7,7 +7,7 @@ export interface IOption {
 }
 
 export interface IQuiz {
-  _id?: string
+  _id?: Types.ObjectId
   title: string
   options: IOption[]
 }

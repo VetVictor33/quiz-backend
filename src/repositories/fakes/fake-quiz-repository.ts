@@ -1,10 +1,11 @@
+import mongoose from "mongoose";
 import { IOption, IQuiz } from "@/schemas/quiz";
 import { QuizRepository } from "../quiz-repository";
 
 export class FakeQuizRepository implements QuizRepository {
   private quizzes: IQuiz[] = []
 
-  async findById(id: string): Promise<IQuiz | null> {
+  async findById(id: string | mongoose.Types.ObjectId): Promise<IQuiz | null> {
     const quiz = this.quizzes.find(quiz => quiz._id === id)
     if (!quiz) {
       return null
@@ -13,8 +14,11 @@ export class FakeQuizRepository implements QuizRepository {
   }
 
   async createOne(title: string, options: IOption[]): Promise<void> {
+    for (const option of options) {
+      option._id = new mongoose.Types.ObjectId()
+    }
     this.quizzes.push({
-      title, options
+      _id: new mongoose.Types.ObjectId(), title, options
     })
   }
 
