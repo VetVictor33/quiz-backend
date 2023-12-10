@@ -7,7 +7,7 @@ export async function errorHandler(error: Error, request: Request, response: Res
   if (env.NODE_ENV !== 'production') {
     console.error(error)
   } else {
-    //ass to log
+    //pass to log
   }
 
   if (error instanceof ZodError) {
