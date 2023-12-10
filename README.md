@@ -8,7 +8,7 @@
 
 ### .Env
 
-- Criar um arquivo .env na raiz do projeto e transferior o conteúdo de .env.example para ele, certifique-se de preencher a variável MONGO_CONNECTION  sua url do MongoDB
+- Criar um arquivo .env na raiz do projeto e transferior o conteúdo de .env.example para ele, certifique-se de preencher a variável MONGO_CONNECTION  com a sua url do MongoDB
 
 ### Instalar dependências
 
